@@ -1,9 +1,9 @@
-from flask.ext.sqlalchemy import SQLAlchemy
-from werkzeug import generate_password_hash, check_password_hash
+from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
 
 db = SQLAlchemy()
 
-class user(db.Model):
+class User(db.Model):
   __tablename__ = 'users'
   uid = db.Column(db.Integer, primary_key = True)
   firstname = db.Column(db.String(100))
